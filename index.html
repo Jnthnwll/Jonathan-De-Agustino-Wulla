@@ -43,11 +43,33 @@
       margin: 5px 0 15px;
     }
     nav a {
-      color: white;
-      margin: 0 10px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+  position: relative;
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+/* efek garis animasi */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* jarak garis dengan teks */
+  width: 0;
+  height: 2px;
+  background: #f1c40f; /* warna garis (kuning emas) */
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: #f1c40f; /* teks berubah warna */
+}
+
+nav a:hover::after {
+  width: 100%; /* garis muncul dari kiri ke kanan */
+}
 
     /* SECTION */
     section {
