@@ -1,110 +1,19 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portofolio - Jonathan De Agustino Wulla</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f9f9f9;
-      color: #333;
-    }
-
-    /* HEADER */
-    header {
-      background: #2c3e50;
-      color: white;
-      padding: 30px;
-    }
-    .header-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 30px;
-    }
-    .header-container img {
-      width: 160px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 8px; /* kotak dengan sedikit rounded */
-      border: 3px solid white;
-    }
-    .header-text {
-      text-align: left;
-    }
-    .header-text h1 {
-      margin: 0;
-      font-size: 28px;
-    }
-    .header-text p {
-      margin: 5px 0 15px;
-    }
-    nav a {
-  position: relative;
-  color: white;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-/* efek garis animasi */
-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5px; /* jarak garis dengan teks */
-  width: 0;
-  height: 2px;
-  background: #f1c40f; /* warna garis (kuning emas) */
-  transition: width 0.3s ease;
-}
-
-nav a:hover {
-  color: #f1c40f; /* teks berubah warna */
-}
-
-nav a:hover::after {
-  width: 100%; /* garis muncul dari kiri ke kanan */
-}
-
-    /* SECTION */
-    section {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    h2 {
-      color: #2c3e50;
-    }
-    .project {
-      margin-bottom: 20px;
-    }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 15px;
-      background: #2c3e50;
-      color: white;
-      margin-top: 40px;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- HEADER -->
   <header>
-    <div class="header-container">
-      <img src="Foto .jpg" alt="Foto Saya">
-      <div class="header-text">
+    <div class="container header-content">
+      <img src="foto.jpg" alt="Foto Jonathan" class="profile-img" />
+      <div class="intro">
         <h1>Jonathan De Agustino Wulla</h1>
-        <p>Fresh Graduate</p>
+        <p>Fresh Graduate | Data Science & Web Development Enthusiast</p>
         <nav>
           <a href="#about">Tentang</a>
           <a href="#skills">Skills</a>
@@ -115,59 +24,51 @@ nav a:hover::after {
     </div>
   </header>
 
-  <!-- TENTANG SAYA -->
-  <section id="about">
-    <h2>👋 Tentang Saya</h2>
-    <p>
-      Halo! Saya <strong>Jonathan De Agustino Wulla</strong>, fresh graduate dari Teknik Informatika Universitas Buddhi Dharma. 
-      Saya memiliki minat besar dalam <em>Data Science</em>, <em>Machine Learning</em>, dan <em>Web Development</em>. 
-      Saya senang memecahkan masalah dengan pendekatan analisis data dan teknologi.
-    </p>
-  </section>
+  <main>
+    <section id="about" class="container">
+      <h2>👋 Tentang Saya</h2>
+      <p>Saya lulusan Teknik Informatika dari Universitas Buddhi Dharma dengan minat besar dalam <strong>Data Science</strong>, <strong>Machine Learning</strong>, dan <strong>Web Development</strong>. Saya senang memecahkan masalah dengan pendekatan analisis data dan teknologi.</p>
+    </section>
 
-  <!-- SKILLS -->
-  <section id="skills">
-    <h2>🛠️ Skills</h2>
-    <ul>
-      <li>Python (Pandas, NumPy, scikit-learn)</li>
-      <li>PHP, MySQL, HTML, CSS, JavaScript</li>
-      <li>Machine Learning (Naive Bayes, Decision Tree)</li>
-      <li>Data Visualization (Matplotlib, Power BI)</li>
-    </ul>
-  </section>
+    <section id="skills" class="container">
+      <h2>🛠️ Skills</h2>
+      <ul class="skills-list">
+        <li>Python (Pandas, NumPy, scikit-learn)</li>
+        <li>PHP, MySQL, HTML, CSS, JavaScript</li>
+        <li>Machine Learning (Naive Bayes, Decision Tree)</li>
+        <li>Data Visualization (Matplotlib, Power BI)</li>
+      </ul>
+    </section>
 
-  <!-- PORTOFOLIO -->
-  <section id="portfolio">
-    <h2>📂 Portofolio</h2>
+    <section id="portfolio" class="container">
+      <h2>📂 Portofolio</h2>
+      <div class="project-card">
+        <h3>1. Analisis Sentimen Program Makan Siang Gratis</h3>
+        <p>Mengklasifikasikan opini publik di Media X menggunakan TF-IDF & Naive Bayes.</p>
+        <p><strong>Tools:</strong> Python, scikit-learn, Sastrawi</p>
+        <p><strong>Hasil:</strong> Akurasi 77,18%, Presisi 87,5%, Recall 86,03%, F1-score 86,76%</p>
+        <a href="https://github.com/username/analisis-sentimen" target="_blank">🔗 Lihat di GitHub</a>
+      </div>
 
-    <div class="project">
-      <h3>1. Analisis Sentimen Program Makan Siang Gratis</h3>
-      <p>Mengklasifikasikan opini publik di Media X menggunakan TF-IDF & Naive Bayes.</p>
-      <p><b>Tools:</b> Python, scikit-learn, Sastrawi</p>
-      <p><b>Hasil:</b> Akurasi 77,18%,Presisi 87,5%,Recall 86,03%,F-1score 86,76% </p>
-      <a href="https://github.com/username/analisis-sentimen" target="_blank">Lihat di GitHub</a>
-    </div>
+      <div class="project-card">
+        <h3>2. Analisis Pola Pembelian Produk Retail</h3>
+        <p>Menganalisis pola pembelian konsumen dengan metode <strong>FP-Growth</strong>.</p>
+        <p><strong>Tools:</strong> Rapidminer</p>
+        <p><strong>Hasil:</strong> Menemukan pola belanja seperti <em>"Jika membeli kopi, 70% kemungkinan membeli gula"</em>.</p>
+        <a href="https://github.com/username/fp-growth-retail" target="_blank">🔗 Lihat di GitHub</a>
+      </div>
+    </section>
 
-    <div class="project">
-      <h3>2. Analisis Pola Pembelian Produk Retail</h3>
-      <p>Menganalisis pola pembelian konsumen dengan metode <b>FP-Growth</b>.</p>
-      <p><b>Tools:</b> Rapidminer</p>
-      <p><b>Hasil:</b> Menemukan pola belanja seperti <i>"Jika membeli kopi, 70% kemungkinan membeli gula"</i>.</p>
-      <a href="https://github.com/username/fp-growth-retail" target="_blank">Lihat di GitHub</a>
-    </div>
-  </section>
+    <section id="contact" class="container">
+      <h2>📬 Kontak</h2>
+      <p>Email: <a href="mailto:jonathandeagustino@email.com">jonathandeagustino@email.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/jonathan-de-agustino-94b8991b7">linkedin.com/in/jonathan-de-agustino</a></p>
+      <p>GitHub: <a href="https://github.com/username">github.com/username</a></p>
+    </section>
+  </main>
 
-  <!-- KONTAK -->
-  <section id="contact">
-    <h2>📬 Kontak</h2>
-    <p>Email: <a href="mailto:jonathandeagustino@email.com">jonathandeagustino@email.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/jonathan-de-agustino-94b8991b7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">linkedin.com/in/username</a></p>
-    <p>GitHub: <a href="https://github.com/username" target="_blank">github.com/username</a></p>
-  </section>
-
-  <!-- FOOTER -->
   <footer>
-    <p>©2025 JONATHAN DE AGUSTINO WULLA - Dibuat dengan ❤️</p>
+    <p>©2025 Jonathan De Agustino Wulla — Dibuat dengan ❤️</p>
   </footer>
 </body>
 </html>
