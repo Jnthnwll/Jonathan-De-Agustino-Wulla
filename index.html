@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portofolio Jonathan</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- AOS Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     * { margin:0; padding:0; box-sizing: border-box; }
     body {
       font-family: 'Poppins', sans-serif;
-      background: #0f2027; /* dark gradient */
       background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
       color: #fff;
       overflow-x: hidden;
     }
-
     header {
       height: 100vh;
       display: flex;
@@ -24,7 +24,6 @@
       text-align: center;
       padding: 20px;
     }
-
     .profile-pic {
       width: 180px;
       height: 180px;
@@ -35,66 +34,67 @@
       margin-bottom: 20px;
       transition: transform 0.4s;
     }
-    .profile-pic:hover {
-      transform: scale(1.05) rotate(-2deg);
-    }
-
-    h1 {
-      font-size: 36px;
-      font-weight: 700;
-    }
-    p.tagline {
-      font-size: 18px;
-      opacity: 0.9;
-      margin-top: 8px;
-    }
-
-    nav {
-      margin-top: 25px;
-    }
+    .profile-pic:hover { transform: scale(1.05) rotate(-2deg); }
+    h1 { font-size: 36px; font-weight: 700; }
+    p.tagline { font-size: 18px; opacity: 0.9; margin-top: 8px; }
+    nav { margin-top: 25px; }
     nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: 500;
-      position: relative;
+      color: #fff; text-decoration: none; margin: 0 15px; font-weight: 500; position: relative;
     }
     nav a::after {
-      content: "";
-      position: absolute;
-      width: 0%;
-      height: 2px;
-      left: 0;
-      bottom: -5px;
-      background: #00c6ff;
-      transition: 0.3s;
+      content: ""; position: absolute; width: 0%; height: 2px; left: 0; bottom: -5px;
+      background: #00c6ff; transition: 0.3s;
     }
-    nav a:hover::after {
-      width: 100%;
-    }
+    nav a:hover::after { width: 100%; }
 
     section {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 60px auto;
       padding: 30px;
       background: rgba(255, 255, 255, 0.05);
       border-radius: 15px;
       backdrop-filter: blur(10px);
       box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-      transition: transform 0.3s;
-    }
-    section:hover {
-      transform: translateY(-5px);
     }
     section h2 {
-      font-size: 24px;
-      margin-bottom: 15px;
+      font-size: 26px;
+      margin-bottom: 20px;
       color: #00c6ff;
       border-left: 5px solid #00c6ff;
       padding-left: 10px;
     }
-    ul { list-style: none; }
-    ul li { margin: 8px 0; }
+
+    /* --- Portfolio Cards --- */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 10px;
+    }
+    .card {
+      background: rgba(255,255,255,0.07);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+    }
+    .card h3 { margin-bottom: 10px; }
+    .card p { font-size: 14px; margin: 5px 0; opacity: 0.9; }
+    .btn-github {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 8px 15px;
+      background: #00c6ff;
+      color: #fff;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .btn-github:hover { background: #0099cc; }
 
     footer {
       text-align: center;
@@ -106,11 +106,10 @@
 </head>
 <body>
 
-  <header>
+  <header data-aos="fade-up">
     <img src="Foto lamar.jpg" alt="Foto Jonathan" class="profile-pic">
     <h1>Jonathan De Agustino Wulla</h1>
     <p class="tagline">Fresh Graduate | Data Enthusiast | Web Developer</p>
-
     <nav>
       <a href="#about">Tentang</a>
       <a href="#skills">Skills</a>
@@ -119,13 +118,13 @@
     </nav>
   </header>
 
-  <section id="about">
+  <section id="about" data-aos="fade-right">
     <h2>Tentang Saya</h2>
     <p>Saya adalah seorang fresh graduate dengan minat besar di bidang analisis data, machine learning, dan pengembangan web. 
        Saya senang mengolah data menjadi informasi yang bermanfaat untuk mendukung pengambilan keputusan.</p>
   </section>
 
-  <section id="skills">
+  <section id="skills" data-aos="fade-left">
     <h2>Skills</h2>
     <ul>
       <li>⚡ Python (Pandas, Scikit-Learn, Flask)</li>
@@ -135,24 +134,47 @@
     </ul>
   </section>
 
-  <section id="portfolio">
+  <section id="portfolio" data-aos="zoom-in">
     <h2>Portofolio</h2>
-    <ul>
-      <li>📊 Aplikasi Analisis Sentimen menggunakan Flask & Naive Bayes</li>
-      <li>💍 Website Undangan Pernikahan Responsif</li>
-      <li>🛒 Sistem Manajemen Data Penjualan</li>
-    </ul>
+    <div class="portfolio-grid">
+      <div class="card">
+        <h3>📊 Analisis Sentimen</h3>
+        <p><b>Tools:</b> Python, Flask, TF-IDF, Naive Bayes</p>
+        <p><b>Hasil:</b> Website klasifikasi sentimen positif/negatif.</p>
+        <a href="https://github.com/username/projek-sentimen" target="_blank" class="btn-github">Lihat di GitHub</a>
+      </div>
+      <div class="card">
+        <h3>🛍 FP-Growth Retail</h3>
+        <p><b>Tools:</b> Python, FP-Growth</p>
+        <p><b>Hasil:</b> Analisis pola pembelian barang & rekomendasi produk.</p>
+        <a href="https://github.com/username/projek-fpgrowth" target="_blank" class="btn-github">Lihat di GitHub</a>
+      </div>
+      <div class="card">
+        <h3>💍 Website Undangan</h3>
+        <p><b>Tools:</b> HTML, CSS, JavaScript</p>
+        <p><b>Hasil:</b> Website undangan pernikahan responsif & interaktif.</p>
+        <a href="https://github.com/username/projek-undangan" target="_blank" class="btn-github">Lihat di GitHub</a>
+      </div>
+    </div>
   </section>
 
-  <section id="contact">
+  <section id="contact" data-aos="fade-up">
     <h2>Kontak</h2>
-    <p>Email: jonathan@example.com</p>
-    <p>LinkedIn: linkedin.com/in/jonathan</p>
+    <p>Email: jonathandeagustino@gmail.com</p>
+    <p>LinkedIn: https://www.linkedin.com/in/jonathan-de-agustino-94b8991b7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app</p>
   </section>
 
   <footer>
-    <p>&copy; 2025 Jonathan De Agustino Wulla</p>
+    <p>&copy; 2025-Jonathan De Agustino Wulla</p>
   </footer>
 
+  <!-- Script AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1200,
+      once: true
+    });
+  </script>
 </body>
 </html>
